@@ -52,7 +52,7 @@ def encontrar_faixa_azul(imagem, cor_alvo, tolerancia=15, altura_faixa=20): # AT
         
         for dy in range(altura_faixa):
             # Pega a cor do pixel atual (verifica no último pixel da linha, ou seja, no canto da imagem)
-            pixel = pixels[largura-684, y + dy]  # CORRIGIDO: verificar o pixel próximo ao canto para evitar bordas
+            pixel = pixels[largura-1724, y + dy]  # CORRIGIDO: verificar o pixel próximo ao canto para evitar bordas
             
             if len(pixel) == 4:  # RGBA
                 r, g, b, a = pixel
@@ -139,7 +139,7 @@ if __name__ == "__main__":
     pasta_saida = "inteiras_recortadas" # Substitua pelo nome da pasta de saída desejada
 
     # Converte a cor do GIMP 0a100 para RGB (0a255)
-    cor_do_padrao = converter_cor_gimp_para_rgb(87.8, 87.5, 87.5) # COLOCAR O RGB CORRETO DA FAIXA QUE DIVIDE AS QUESTÕES (0a100 do GIMP)
+    cor_do_padrao = converter_cor_gimp_para_rgb(90.2, 89.8, 89.8) # COLOCAR O RGB CORRETO DA FAIXA QUE DIVIDE AS QUESTÕES (0a100 do GIMP)
     print(f"Cor convertida: RGB{cor_do_padrao}")
     
     # Executa a divisão
